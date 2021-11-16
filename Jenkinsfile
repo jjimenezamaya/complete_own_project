@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Build'){
             steps {
+                echo 'STARTING'
                 git url: 'https://bitbucket.org/jjimenez-ind/complete_own_project/src/main/'
                 echo 'Cleaning and packaging with maven...'
 

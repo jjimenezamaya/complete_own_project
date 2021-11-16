@@ -4,7 +4,7 @@ pipeline {
         stage('Build'){
             steps {
                 echo 'STARTING'
-                git url: 'https://bitbucket.org/jjimenez-ind/complete_own_project/src/main/'
+                git url: 'https://bitbucket.org/jjimenez-ind/complete_own_project/src/master'
                 echo 'Cleaning and packaging with maven...'
 
                 withMaven {
@@ -15,6 +15,9 @@ pipeline {
             post{
                 success{
                     echo 'DONE'
+                    echo 'Now Archiving...'
+                    archiveArtifacts artifacts: '**/target/*.war'
+                    echo 'Archived
                 }
 
                 failure {

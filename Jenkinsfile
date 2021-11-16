@@ -15,9 +15,6 @@ pipeline {
             post{
                 success{
                     echo 'DONE'
-                    echo 'Now Archiving...'
-                    archiveArtifacts artifacts: '**/*.war'
-                    echo 'Archived'
                 }
 
                 failure {

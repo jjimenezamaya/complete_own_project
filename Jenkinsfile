@@ -5,10 +5,10 @@ pipeline {
             steps {
                 git url: ''
                 echo 'Cleaning and packaging with maven...'
-            }
 
-            withMaven {
-                bat 'mvn clean package'
+                withMaven {
+                    bat 'mvn clean package'
+                }
             }
 
             post{

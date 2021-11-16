@@ -17,7 +17,7 @@ pipeline {
                     echo 'DONE'
                     echo 'Now Archiving...'
                     archiveArtifacts artifacts: '**/target/*.war'
-                    echo 'Archived
+                    echo 'Archived'
                 }
 
                 failure {
